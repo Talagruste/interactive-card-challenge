@@ -67,7 +67,6 @@ cardExpMonth.addEventListener("input", (e) => {
 cardExpMonth.addEventListener("input", (e) => {
     e.target.value = e.target.value = e.target.value
         .replace(/[^\dA-Z]/g, "")
-        .replace(/(.{4})/g, "$1 ")
         .trim();
 });
 cardExpYear.addEventListener("input", (e) => {
@@ -85,7 +84,6 @@ cardExpYear.addEventListener("input", (e) => {
 cardExpYear.addEventListener("input", (e) => {
     e.target.value = e.target.value = e.target.value
         .replace(/[^\dA-Z]/g, "")
-        .replace(/(.{4})/g, "$1 ")
         .trim();
 });
 cvc.addEventListener("input", (e) => {
@@ -103,7 +101,6 @@ cvc.addEventListener("input", (e) => {
 cvc.addEventListener("input", (e) => {
     e.target.value = e.target.value = e.target.value
         .replace(/[^\dA-Z]/g, "")
-        .replace(/(.{4})/g, "$1 ")
         .trim();
 });
 submitBtn.addEventListener("click", () => {
@@ -124,7 +121,6 @@ submitBtn.addEventListener("click", () => {
 });
 returnBtn.addEventListener("click", () => {
     tksContainer.style.display = "none"
-    returnBtn.style.width = "100%"
     form.style.display = "block"
     document.getElementById("cardholder-name").value = ""
     document.getElementById("card-number").value = ""
