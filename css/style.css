@@ -1,0 +1,188 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+/**/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --error-color: hsl(0, 100%, 66%);
+    --white-color: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 18px;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.card-front,
+.card-back {
+    width: fit-content;
+}
+
+.card-back {
+    transform: translateX(20%);
+}
+
+.card-logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 100%;
+}
+
+.card-number {
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    font-size: 34px;
+}
+
+.card-name {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+}
+
+.date {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+.cvc {
+    position: absolute;
+    bottom: 39%;
+    right: 0;
+    width: 20%;
+}
+
+form label {
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-bottom: 10px;
+}
+
+form input {
+    border: 2px solid var(--light-grayish-violet);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border-image-slice: 1;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+form input:focus {
+    border-image-source: linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+    border-radius: 10px;
+}
+
+input::placeholder {
+    color: var(--light-grayish-violet);
+}
+
+#month,
+#year,
+#cvc {
+    width: 30%;
+    margin-right: 5px;
+}
+
+.default-btn {
+    width: 100%;
+    background-color: var(--very-dark-violet);
+    color: var(--light-grayish-violet);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 0px;
+}
+
+.card-name-error,
+.card-number-error,
+.month-error,
+.year-error,
+.cvc-error {
+    color: var(--error-color);
+}
+
+.tks-title {
+    text-transform: uppercase;
+    color: var(--very-dark-violet);
+}
+
+.tks-text {
+    color: var(--dark-grayish-violet);
+}
+
+.tks-container {
+    display: none;
+}
+
+/* media queries */
+
+@media all and (max-width: 994px) {
+    .card-number {
+        font-size: 24px;
+    }
+
+    .bg-image {
+        max-width: 50%;
+    }
+}
+
+@media all and (max-width: 768px) {
+
+    .back-card {
+        transform: translate(25% 25%);
+        z-index: -1;
+    }
+
+    .card-number {
+        font-size: 18px;
+    }
+
+    .bg-image {
+        max-width: 100%;
+    }
+}
+
+@media all and (max-width: 415px) {
+
+    .card-name,
+    .date {
+        bottom: 0%;
+    }
+
+    .cvc {
+        top: 40%;
+        right: 5%;
+    }
+}
+
+/**/
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
