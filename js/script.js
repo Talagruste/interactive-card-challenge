@@ -27,6 +27,7 @@ cardholderName.addEventListener("keyup", (e) => {
         cardNameBox.innerHTML = "Jane Appleseed"
     } else if (keyLetters) {
         cardNameBox.innerHTML = cardNameValue
+        cardNameError.innerHTML = ""
     } else {
         cardholderName.setAttribute("disabled", "")
         cardNameError.innerHTML = "Please use only letters!"
@@ -41,6 +42,7 @@ cardNumber.addEventListener("keyup", (e) => {
         cardNumberBox.innerHTML = "0000 0000 0000 0000"
     } else if (keyNumbers) {
         cardNumberBox.innerHTML = cardNumberValue
+        cardNumberError.innerHTML = ""
     } else {
         cardNumber.setAttribute("enabled", "")
         cardNumberError.innerHTML = "Please use only numbers!"
@@ -60,6 +62,7 @@ cardExpMonth.addEventListener("input", (e) => {
         monthBox.innerHTML = "00"
     } else if (valueNumbers) {
         monthBox.innerHTML = value
+        monthError.innerHTML = ""
     } else {
         monthError.innerHTML = "Please enter a month!"
         cardExpMonth.setAttribute("enable", "")
@@ -74,12 +77,13 @@ cardExpYear.addEventListener("input", (e) => {
     let value = e.target.value;
     let valueNumbers = value.match(/^[0-9 ]*$/)
     if (value === "") {
-        yearError.innerHTML = "Please enter year!"
+        yearError.innerHTML = "Please enter a year!"
         yearBox.innerHTML = "00"
     } else if (valueNumbers) {
-        yearBox.innerHTML = valueNumbers;
+        yearBox.innerHTML = valueNumbers
+        yearError.innerHTML = ""
     } else {
-        yearError.innerHTML = "Please enter year!"
+        yearError.innerHTML = "Please enter a year!"
         cardExpYear.setAttribute("enable", "")
     }
 });
@@ -92,12 +96,13 @@ cvc.addEventListener("input", (e) => {
     let value = e.target.value
     let valueNumbers = value.match(/^[0-9 ]*$/)
     if (value === "") {
-        cvcError.innerHTML = "Please enter cvc!"
+        cvcError.innerHTML = "Please enter the cvc!"
         cvcBox.innerHTML = "000"
     } else if (valueNumbers) {
         cvcBox.innerHTML = valueNumbers
+        cvcError.innerHTML = ""
     } else {
-        cvcError.innerHTML = "Please enter cvc!"
+        cvcError.innerHTML = "Please enter the cvc!"
         cvc.setAttribute("enable", "")
     }
 });
@@ -125,9 +130,15 @@ submitBtn.addEventListener("click", () => {
 returnBtn.addEventListener("click", () => {
     tksContainer.style.display = "none"
     form.style.display = "block"
-    document.getElementById("cardholder-name").value = ""
-    document.getElementById("card-number").value = ""
-    document.getElementById("month").value = ""
-    document.getElementById("year").value = ""
-    document.getElementById("cvc").value = ""
+    cardholderName.value = ""
+    cardNumber.value = ""
+    cardExpMonth.value = ""
+    cardExpYear.value = ""
+    cvc.value = ""
+    cardNumberError.innerHTML = ""
+    cardNameBox.innerHTML = "Jane Appleseed"
+    cardNumberBox.innerHTML = "0000 0000 0000 0000"
+    monthBox.innerHTML = "00"
+    yearBox.innerHTML = "00"
+    cvcBox.innerHTML = "000"
 });
