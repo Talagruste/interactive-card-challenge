@@ -24,6 +24,7 @@ cardholderName.addEventListener("keyup", (e) => {
     let keyLetters = key.match(/^[A-za-z ]*$/)
     if (cardNameValue.length === 0) {
         cardNameError.innerHTML = "Please enter your name!"
+        cardNameBox.innerHTML = "Jane Appleseed"
     } else if (keyLetters) {
         cardNameBox.innerHTML = cardNameValue
     } else {
@@ -37,10 +38,9 @@ cardNumber.addEventListener("keyup", (e) => {
     let keyNumbers = key.match(/^[0-9 ]*$/)
     if (cardNumberValue.length === 0) {
         cardNumberError.innerHTML = "Please enter your card number!"
+        cardNumberBox.innerHTML = "0000 0000 0000 0000"
     } else if (keyNumbers) {
         cardNumberBox.innerHTML = cardNumberValue
-    } else if (key === "Backspace") {
-        cardNumber.setAttribute("enabled", "")
     } else {
         cardNumber.setAttribute("enabled", "")
         cardNumberError.innerHTML = "Please use only numbers!"
@@ -57,6 +57,7 @@ cardExpMonth.addEventListener("input", (e) => {
     let valueNumbers = value.match(/^[0-9 ]*$/)
     if (value === "") {
         monthError.innerHTML = "Please enter a month"
+        monthBox.innerHTML = "00"
     } else if (valueNumbers) {
         monthBox.innerHTML = value
     } else {
@@ -74,6 +75,7 @@ cardExpYear.addEventListener("input", (e) => {
     let valueNumbers = value.match(/^[0-9 ]*$/)
     if (value === "") {
         yearError.innerHTML = "Please enter year!"
+        yearBox.innerHTML = "00"
     } else if (valueNumbers) {
         yearBox.innerHTML = valueNumbers;
     } else {
@@ -91,6 +93,7 @@ cvc.addEventListener("input", (e) => {
     let valueNumbers = value.match(/^[0-9 ]*$/)
     if (value === "") {
         cvcError.innerHTML = "Please enter cvc!"
+        cvcBox.innerHTML = "000"
     } else if (valueNumbers) {
         cvcBox.innerHTML = valueNumbers
     } else {
